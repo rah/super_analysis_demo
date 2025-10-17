@@ -1,0 +1,29 @@
+# Superannuation Analysis Tool Configuration
+
+# Investment Options
+investment_options:
+  Growth:
+    return_target: 5.5  # percentage return above inflation (10yr rolling avg)
+    risk_measure: 4     # negative returns expected every X years (20yr period)
+  
+  Balanced:
+    return_target: 4.0
+    risk_measure: 5
+  
+  Conservative Balanced:
+    return_target: 3.0
+    risk_measure: 6
+  
+  Stable:
+    return_target: 2.0
+    risk_measure: 8
+  
+  Secure:
+    return_target: 1.0
+    risk_measure: 12
+
+# Global Parameters
+global_parameters:
+  inflation_rate: 2.5        # expected inflation rate (10yr rolling avg) in %
+  negative_return: -10.0     # expected percentage of a negative return in %
+  monte_carlo_iterations: 10000  # number of simulation iterations (adjustable for speed vs accuracy)
