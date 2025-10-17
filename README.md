@@ -292,18 +292,76 @@ Adjust these to match economic forecasts or change default settings.
 3. Ensure numeric values don't have units or symbols
 4. Validate percentage values are positive numbers
 
+## Testing
+
+The project includes comprehensive unit and integration tests to ensure reliability.
+
+### Running Tests
+
+Run all tests:
+```bash
+conda activate super_analysis
+python run_tests.py all
+```
+
+Run only unit tests:
+```bash
+python run_tests.py unit
+```
+
+Run only integration tests:
+```bash
+python run_tests.py integration
+```
+
+Run quick test suite (for rapid feedback):
+```bash
+python run_tests.py quick
+```
+
+### Test Coverage
+
+**Unit Tests** (`test_simulation_engine.py`):
+- Engine initialization and configuration
+- Return generation and probability distributions
+- Portfolio simulation mechanics
+- Monte Carlo execution and statistics
+- Allocation generation algorithms
+- Optimization functions
+- Edge cases and boundary conditions
+- Statistical validity checks
+
+**Integration Tests** (`test_integration.py`):
+- End-to-end analysis workflows
+- Multi-timeperiod scenarios
+- Different investment amounts
+- Reproducibility and consistency
+- Performance benchmarks
+- Error handling
+- Statistical properties validation
+
+**Test Statistics**:
+- Total tests: 34
+- Unit tests: 21
+- Integration tests: 13
+- Coverage areas: Configuration, simulation, optimization, statistics, performance
+
 ## File Structure
 
 ```
 super_analysis_demo/
-├── config.yaml                 # Configuration file
-├── super_analysis_app.py       # GUI application
-├── super_analysis_cli.py       # Command-line application
-├── simulation_engine.py        # Monte Carlo engine
-├── test_full.py               # Automated test script
-├── requirements.txt           # Python dependencies
-├── README.md                  # This documentation
-└── super_analysis_spec.md     # Original specification
+├── config.yaml                    # Configuration file
+├── super_analysis_app.py          # GUI application
+├── super_analysis_cli.py          # Command-line application
+├── simulation_engine.py           # Monte Carlo engine
+├── test_full.py                   # Automated demo script
+├── test_simulation_engine.py      # Unit tests
+├── test_integration.py            # Integration tests
+├── run_tests.py                   # Test runner
+├── requirements.txt               # Python dependencies
+├── .gitignore                     # Git ignore rules
+├── README.md                      # This documentation
+└── super_analysis_spec.md         # Original specification
 ```
 
 ## Example Workflow
